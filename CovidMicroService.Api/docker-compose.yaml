@@ -1,0 +1,32 @@
+version: '3.4'
+
+services:
+    sql-server-db:
+        container_name: sql-server-db
+        image: microsoft/mssql-server-windows-developer
+        ports:
+            - "1433:1433"
+        environment:
+            SA_PASSWORD: "Password@1"
+            ACCEPT_EULA: "Y"
+        volumes:
+            - C:\TempSQLServer:c:\TempSQLServer
+    api:
+        container_name: Covid19-Services
+        image: ${DOCKER_REGISTRY-}covidmicroservice.api
+        environment:
+            LocalHashtagConnection: "Data Source=sql-server-db;Initial Catalog=CovidMicroServiceDB;User Id=sa;Password=Password@1;"
+            CorsOrigin: "https://*:443"
+            ASPNETCORE_URLS: "https://+:443;http://+:80"
+            ASPNETCORE_Kestrel__Certificates__Default__Password: Password
+            ASPNETCORE_Kestrel__Certificates__Default__Path: "c:/src/local.pfx"
+        build:
+            context: .
+            dockerfile: CovidMicroService.Api\dockerfile
+        ports:
+            - 80:80
+            - 443:443
+        volumes:
+            - c:/temp-keys:c:\src
+        depends_on:
+          - sql-server-db
