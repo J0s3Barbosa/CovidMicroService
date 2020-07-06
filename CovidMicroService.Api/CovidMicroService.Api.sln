@@ -7,10 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CovidMicroService.Api", "Co
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Docker", "0 - Docker", "{6B4E0694-D9EB-43FD-BC37-DB8036995636}"
 	ProjectSection(SolutionItems) = preProject
-		..\Docker\.dockerignore = ..\Docker\.dockerignore
-		..\Docker\docker-compose-mssql.yaml = ..\Docker\docker-compose-mssql.yaml
-		..\Docker\docker-compose.yaml = ..\Docker\docker-compose.yaml
-		..\Docker\database\Dockerfile = ..\Docker\database\Dockerfile
+		docker-compose-api.yaml = docker-compose-api.yaml
+		docker-compose-mssql.yaml = docker-compose-mssql.yaml
+		docker-compose.yaml = docker-compose.yaml
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject

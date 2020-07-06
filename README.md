@@ -28,7 +28,7 @@
 # Setup
 
 - Open CMD/PS
-- Navigate to folder that contains docker compose
+- Navigate to the folder that contains docker compose
 - run docker-compose up --build -V  
-  - this will build th aapi and deploy api and DB
+  - this will build and deploy the api and Database
 
