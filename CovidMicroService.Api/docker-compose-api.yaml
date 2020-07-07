@@ -5,8 +5,10 @@ services:
         container_name: Covid19-Services
         image: ${DOCKER_REGISTRY-}covidmicroservice.api
         environment:
-            LocalHashtagConnection: "Data Source=sql-server-db;Initial Catalog=CovidMicroServiceDB;User Id=sa;Password=Password@1;"
+            LocalConnection: "Data Source=sql-server-db;Initial Catalog=CovidMicroServiceDB;User Id=sa;Password=Password@1;"
             CorsOrigin: "https://*:443"
+            Secret: "Secret"
+            "AppSettings:Secret": "Secret"
             ASPNETCORE_URLS: "https://+:443;http://+:80"
             ASPNETCORE_Kestrel__Certificates__Default__Password: Password
             ASPNETCORE_Kestrel__Certificates__Default__Path: "c:/src/local.pfx"

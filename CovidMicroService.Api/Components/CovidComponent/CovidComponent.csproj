@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Authors>Jose Barbosa</Authors>
+    <Company>Hashtag Koding</Company>
+    <PackageIcon>512 x 423 - PNG.png</PackageIcon>
+    <ApplicationIcon>iconk3_pG1_3.ico</ApplicationIcon>
+    <Version>1.2.10</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.24" />
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.5" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="3.1.5" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.5" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.5" />
+    <PackageReference Include="MongoDB.Driver" Version="2.10.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="512 x 423 - PNG.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="ComponentsLib">
+      <HintPath>..\hashtag.Koding.Components\ComponentsLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Services.Domain">
+      <HintPath>..\hashtag.Koding.Components\Services.Domain.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

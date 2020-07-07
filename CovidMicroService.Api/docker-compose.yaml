@@ -1,7 +1,7 @@
 version: '3.4'
 
 services:
-    sql-server-db:
+    c sql-server-db:
         container_name: sql-server-db
         image: microsoft/mssql-server-windows-developer
         ports:

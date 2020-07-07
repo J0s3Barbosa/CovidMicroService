@@ -7,6 +7,11 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-nanoserver-1903 AS build
 WORKDIR /src
 COPY ["CovidMicroService.Api/CovidMicroService.Api.csproj", "CovidMicroService.Api/"]
+
+COPY ["Components/Services.Application/Services.Application.csproj", "Components/Services.Application/"]
+COPY ["Components/Services.Infra/Services.Infra.csproj", "Components/Services.Infra/"]
+COPY ["Components/hashtag.Koding.Components", "Components/hashtag.Koding.Components"]
+
 RUN dotnet restore "CovidMicroService.Api/CovidMicroService.Api.csproj"
 COPY . .
 WORKDIR "/src/CovidMicroService.Api"
